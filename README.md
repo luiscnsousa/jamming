@@ -1,2 +1,1 @@
-# Build Front-End Web Applications From Scratch
-# Jamming
+# Build Front-End Web Applications From Scratch - Jamming
