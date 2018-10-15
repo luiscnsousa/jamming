@@ -1,3 +1,12 @@
+##Deploy using surge
+
+**npm run deploy**
+
+it will be available at:
+[jamming-luiscnsousa.surge.sh](http://jamming-luiscnsousa.surge.sh)
+
+##
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
