@@ -1,12 +1,11 @@
-# Build Front-End Web Applications From Scratch - Jamming App
+# Build Front-End Web Applications From Scratch
 
-## Deploy Jamming using Surge
-**npm run deploy**
-it will be available at:
+###### To deploy Jamming app using Surge run the following command:
+`npm run deploy`
+
+###### it will be available at:
 [jamming-luiscnsousa.surge.sh](http://jamming-luiscnsousa.surge.sh)
 
-##
-##
 ##
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
