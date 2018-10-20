@@ -1,8 +1,9 @@
-##Deploy using surge
+# Build Front-End Web Applications From Scratch
 
-**npm run deploy**
+###### To deploy Jamming app using Surge run the following command:
+`npm run deploy`
 
-it will be available at:
+###### it will be available at:
 [jamming-luiscnsousa.surge.sh](http://jamming-luiscnsousa.surge.sh)
 
 ##
