@@ -24,10 +24,16 @@ const Spotify = {
     console.log("navigating to authorization URL!");
     const authUrl = `https://accounts.spotify.com/authorize?client_id=${clientId}&response_type=token&scope=playlist-modify-public&redirect_uri=${redirectUri}`;
     window.location = authUrl;
+    return null;
   },
 
   search(term) {
     const token = Spotify.getAccessToken();
+    if (token == null) {
+      console.log("will get the token after authentication");
+      return new Promise(() => []);
+    }
+
     const endpoint = `https://api.spotify.com/v1/search?q=${term}&type=track,album,artist&limit=10`;
     console.log(`searching for ${term} on Spotify`);
     return fetch(
@@ -55,11 +61,17 @@ const Spotify = {
 
   savePlaylist(name, trackURIs) {
     if (!name || !trackURIs) {
-      return;
+      console.log("one or more parameters were undefined");
+      return new Promise(() => []);
+    }
+
+    const token = Spotify.getAccessToken();
+    if (token == null) {
+      console.log("will get the token after authentication");
+      return new Promise(() => []);
     }
 
     const baseURL = "https://api.spotify.com/v1";
-    const token = Spotify.getAccessToken();
     const authHeaderValue = `Bearer ${token}`;
     let userId = "";
     let playlistId = "";
