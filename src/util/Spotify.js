@@ -30,8 +30,7 @@ const Spotify = {
   search(term) {
     const token = Spotify.getAccessToken();
     if (token == null) {
-      console.log("will get the token after authentication");
-      return new Promise(() => []);
+      return Promise.reject(new Error("invalid access token"));
     }
 
     const endpoint = `https://api.spotify.com/v1/search?q=${term}&type=track,album,artist&limit=10`;
@@ -61,14 +60,12 @@ const Spotify = {
 
   savePlaylist(name, trackURIs) {
     if (!name || !trackURIs) {
-      console.log("one or more parameters were undefined");
-      return new Promise(() => []);
+      return Promise.reject(new Error("one or more parameters were undefined"));
     }
 
     const token = Spotify.getAccessToken();
     if (token == null) {
-      console.log("will get the token after authentication");
-      return new Promise(() => []);
+      return Promise.reject(new Error("invalid access token"));
     }
 
     const baseURL = "https://api.spotify.com/v1";
